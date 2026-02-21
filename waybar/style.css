@@ -1,0 +1,95 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrains Mono", "Font Awesome 7 Free", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* --- launcher --- */
+#custom-launcher {
+  color: transparent;
+  font-size: 0px;
+  background-image: url("/home/ziggoon/.config/waybar/mcdonalds.svg");
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 22px;
+  padding: 0 8px 0 0;
+  margin: 4px 0;
+}
+
+#custom-launcher:hover {
+  opacity: 0.8;
+}
+
+/* --- workspaces --- */
+#workspaces {
+  margin: 0 4px;
+}
+
+#workspaces button {
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0 6px;
+  margin: 4px 2px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+#workspaces button.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+#workspaces button:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* --- time & date --- */
+#custom-time {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0 8px 0 0;
+  margin: 4px 0;
+}
+
+#custom-date {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0 0 0 8px;
+  margin: 4px 0;
+}
+
+/* --- system monitors --- */
+#cpu,
+#memory,
+#custom-gpu,
+#battery {
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0 12px;
+  margin: 5px 3px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+#custom-ip {
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0 12px;
+  margin: 5px 3px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+#cpu:hover,
+#memory:hover,
+#custom-gpu:hover,
+#custom-ip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}

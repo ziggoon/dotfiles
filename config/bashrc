@@ -1,0 +1,10 @@
+[[ $- != *i* ]] && return
+
+alias ls='exa'
+alias grep='grep --color=auto'
+
+PS1='[\u@\h \W]\$ '
+
+if [ -z "$DISPLAY" ] && [ -z "$WAYLAND_DISPLAY" ] && uwsm check may-start >/dev/null 2>&1; then
+	exec uwsm start hyprland.desktop
+fi

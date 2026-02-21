@@ -1,0 +1,98 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 38,
+    "margin": "0 8 6 8",
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "cpu",
+        "memory",
+        "custom/gpu",
+		"battery",
+    ],
+
+    "modules-center": [
+        "custom/time",
+        "custom/launcher",
+        "custom/date"
+    ],
+
+    "modules-right": [
+        "custom/ip"
+	],
+
+    "custom/launcher": {
+        "format": "M",
+        "on-click": "wofi --show drun --allow-images",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "0",
+            "active": "\u25cf",
+            "default": "\u25cb"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    "cpu": {
+        "format": "\uf2db  {usage}%",
+        "interval": 2,
+        "tooltip-format": "CPU usage: {usage}%"
+    },
+
+    "memory": {
+        "format": "\uf538  {used:0.1f}gb",
+        "interval": 2,
+        "tooltip-format": "{used:0.1f}gb / {total:0.1f}gb"
+    },
+
+    "custom/gpu": {
+        "format": "\uf108  {}%",
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null || true",
+        "exec-if": "which nvidia-smi 2>/dev/null",
+        "interval": 2,
+        "tooltip-format": "GPU utilization"
+    },
+
+	"battery": {
+		"format": "{icon} {capacity}%",
+		"interval": 5,
+		"format-icons": {
+				"default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+				"charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+		}
+	},
+
+    "custom/ip": {
+        "exec": "~/.config/waybar/ip.sh",
+        "interval": 30,
+        "tooltip": false
+    },
+
+    "custom/time": {
+        "exec": "date +'%H:%M:%S'",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "custom/date": {
+        "exec": "date +'%a, %b %d %Y' | tr '[:upper:]' '[:lower:]'",
+        "interval": 60,
+        "tooltip": false
+    }
+}
