@@ -1,0 +1,23 @@
+font-family = JetBrains Mono
+font-size = 10
+
+theme = Gruvbox Material Dark
+
+window-padding-x = 8
+window-padding-y = 8
+window-decoration = false
+gtk-titlebar = false
+
+scrollback-limit = 10000
+copy-on-select = clipboard
+confirm-close-surface = false
+
+cursor-style = block
+cursor-style-blink = false
+
+shell-integration = detect
+
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+n=new_window
+keybind = ctrl+shift+t=new_tab
