@@ -1,6 +1,9 @@
 [[ $- != *i* ]] && return
 
 alias ls='exa'
+alias kinit='kinit zmusgrave'
+alias rdp-dc='cd ~/code/ad-lab; make rdp-dc; cd -'
+alias rdp-ws='cd ~/code/ad-lab; make rdp-ws; cd -'
 alias grep='grep --color=auto'
 
 PS1='[\u@\h \W]\$ '
@@ -8,3 +11,13 @@ PS1='[\u@\h \W]\$ '
 if [ -z "$DISPLAY" ] && [ -z "$WAYLAND_DISPLAY" ] && uwsm check may-start >/dev/null 2>&1; then
 	exec uwsm start hyprland.desktop
 fi
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+export PATH=/home/ziggoon/.opencode/bin:$PATH
+
+alias commute='iwctl station wlan0 connect "US-iPhone-N0GMQ19QD1"'
+alias office='iwctl station wlan0 connect "McD-Personal"'
+
+export PYTHONWARNINGS=ignore
